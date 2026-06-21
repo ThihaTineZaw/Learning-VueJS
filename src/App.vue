@@ -1,9 +1,13 @@
 <script setup lang="ts">
-
+import {RouterView,RouterLink} from 'vue-router'
 
 </script>
 
 <template>
-  <h1>Hello, Vue!</h1>
+  <div class="home">
+   <main>
+    <RouterView />
+   </main>
+  </div>
 </template>
 

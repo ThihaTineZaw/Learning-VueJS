@@ -1,11 +1,14 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  // declare types for the router to avoid TS errors when using `useRouter` and `useRoute`.
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "typed-router.d.ts"],
+
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     // Extra safety for array and object lookups, but may have false positives.
     "noUncheckedIndexedAccess": true,
-
+    // Use the bundler module resolution strategy to avoid issues with Vite's aliasing.
+    "moduleResolution": "Bundler",
     // Path mapping for cleaner imports.
     "paths": {
       "@/*": ["./src/*"]
