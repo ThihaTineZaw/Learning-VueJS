@@ -11,6 +11,17 @@ import skipFormatting from 'eslint-config-prettier/flat'
 
 export default defineConfigWithVueTs(
   {
+    name: 'app/vue-rules',
+    rules: {
+      'vue/multi-word-component-names': [
+        'error',
+        {
+          ignores: ['index', '[id]'],
+        },
+      ],
+    },
+  },
+  {
     name: 'app/files-to-lint',
     files: ['**/*.{vue,ts,mts,tsx}'],
   },
